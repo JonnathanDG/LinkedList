@@ -9,3 +9,7 @@ October 2, 2018
   Jonnathan
 
 
+October 2, 2018 Second entry
+
+  I finally understand how to check the commits in github... I just removed all
+  code that was comment it out :) now looks better :D

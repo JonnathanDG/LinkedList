@@ -37,30 +37,6 @@ namespace LinkedList
         {
             return this.tail;
 
-            ////Checks if there are nodes in the list
-            //if (this.head == null)
-            //{
-            //    this.tail = null;
-            //}
-
-            ////Sets the node as the head
-            //Node<T> node = this.head;
-
-            ////The loop only runs if the node(head) exist
-            //while (node != null)
-            //{
-            //    //If the current node returns null to the next element 
-            //    if (node.Next == null)
-            //    {
-            //        //Then the tail was found
-            //        this.tail = node;
-            //    }
-
-            //    //Updates the current node to the next node
-            //    node = node.Next;
-            //}
-
-            //return this.tail;
         }
 
         //Returns true if the linkedlist is empty
@@ -127,37 +103,6 @@ namespace LinkedList
 
             //The first element is always the head
             return this.tail.Element;
-
-
-            ////I know there is a better way...
-            //Node<T> node = this.head;
-
-
-            ////In case of no nodes
-            //if(node == null)
-            //{
-            //    //tail = this.head.Element;
-
-            //    throw new ApplicationException();
-            //}
-
-            //T tail = node.Element;
-
-            //while (node != null)
-            //{ 
-
-            //    //If the next pointer returns a null
-            //    //means we got the tail
-            //    if (node.Next == null)
-            //    {
-            //        tail = node.Element;
-            //    }
-
-            //    //updates the node in order to look for the tail
-            //    node = node.Next;
-            //}
-
-            //return tail;
 
         }
 
@@ -285,12 +230,6 @@ namespace LinkedList
 
             return oldValue;
 
-            ////Holds the old head
-            //Node<T> oldHead = this.head;
-
-            //this.AddFirst(element);
-
-            //return oldHead.Element;
         }
 
         //Sets the elements as the last one in the list
@@ -304,12 +243,6 @@ namespace LinkedList
             this.tail.Element = element;
             return oldValue;
 
-            ////Holds the old tail
-            //Node<T> oldTail = this.tail;
-
-            //this.AddLast(element);
-
-            //return oldTail.Element;
         }
 
 
@@ -318,55 +251,6 @@ namespace LinkedList
         {
             return GetNodeByPosition(position).Element;
 
-            ////Gets the size of the list
-            //int listSize = GetSize();
-
-            //if (IsEmpty() || position < 1 || position > listSize)
-            //{
-            //    throw new ApplicationException();
-            //}
-
-            //Node<T> elementToReturn = new Node<T>();
-
-            ////If the position is equal to one then 
-            //// the first node is being called which is the head
-            //if (position == 1)
-            //{
-            //    elementToReturn = this.head;
-            //}
-            //else if (position == listSize)
-            //{
-            //    //If the position is equal to the size of the list
-            //    // then the tail is returned
-            //    elementToReturn = this.tail;
-            //}
-            //else
-            //{
-            //    //Look for the element in position between head and tail
-
-            //    //Sets the node
-            //    Node<T> node = this.head.Next;
-
-            //    //sets the counter
-            //    int counter = 2;
-
-            //    //The loop only runs if the node exist
-            //    while (node != null)
-            //    {
-            //        if (counter == position)
-            //        {
-            //            elementToReturn = node;
-            //            break;
-            //        }
-
-            //        node = node.Next;
-
-            //        //Updates the counter
-            //        counter++;
-            //    }
-            //}
-
-            //return elementToReturn.Element;
         }
 
         //Removes an element in the given position
@@ -376,61 +260,6 @@ namespace LinkedList
 
             return Remove(node);
 
-            ////Gets the size of the list
-            //int listSize = GetSize();
-
-            //if (IsEmpty() || position < 1 || position > listSize)
-            //{
-            //    throw new ApplicationException();
-            //}
-
-            //Node<T> elementToReturn = new Node<T>();
-
-            //if (position == 1)
-            //{
-            //    //Removes the head
-            //    elementToReturn.Element = RemoveFirst();
-            //}
-            //else if (position == listSize)
-            //{
-            //    // Removes the tail
-            //    elementToReturn.Element = RemoveLast();
-            //}
-            //else
-            //{
-            //    //Look for the element in position between head and tail
-
-            //    //Sets the node
-            //    Node<T> node = this.head.Next;
-
-            //    //sets the counter
-            //    int counter = 2;
-
-            //    //The loop only runs if the node(head) exist
-            //    while (node != null)
-            //    {
-            //        if (counter == position)
-            //        {
-            //            elementToReturn = node;
-
-            //            Node<T> previous = elementToReturn.Previous;
-
-            //            previous.Next = previous.Next.Next;
-
-            //            //Reduce the size of the list
-            //            this._size--;
-
-            //            break;
-            //        }
-
-            //        node = node.Next;
-
-            //        //Updates the counter
-            //        counter++;
-            //    }
-            //}
-
-            //return elementToReturn.Element;
         }
 
         //Set a new element in the node that is in the given position
@@ -444,60 +273,6 @@ namespace LinkedList
 
             return oldElement;
 
-            ////Gets the size of the list
-            //int listSize = GetSize();
-
-            //if (IsEmpty() || position < 1 || position > listSize)
-            //{
-            //    throw new ApplicationException();
-            //}
-
-            //Node<T> oldElement = new Node<T>(element);
-
-            //if (position == 1)
-            //{
-            //    oldElement.Element = this.head.Element;
-            //    this.head.Element = element;
-
-            //}
-            //else if (position == listSize)
-            //{
-            //    oldElement.Element = this.tail.Element;
-
-            //    //If the position is equal to the size of the list
-            //    // then the tail is returned
-            //    this.tail.Element = element;
-            //}
-            //else
-            //{
-            //    //Look for the element in position between head and tail
-
-            //    //Sets the node as the head
-            //    Node<T> node = this.head.Next;
-
-            //    //sets the counter
-            //    int counter = 2;
-
-            //    //The loop only runs if the node exist
-            //    while (node != null)
-            //    {
-            //        if (counter == position)
-            //        {
-            //            oldElement.Element = node.Element;
-
-            //            node.Element = element;
-
-            //            break;
-            //        }
-
-            //        node = node.Next;
-
-            //        //Updates the counter
-            //        counter++;
-            //    }
-            //}
-
-            //return oldElement.Element;
         }
 
 
@@ -522,75 +297,6 @@ namespace LinkedList
                 _size++;
             }
 
-
-            ////Gets the size of the list
-            //int listSize = GetSize();
-
-            //if (IsEmpty() || position < 1 || position > listSize)
-            //{
-            //    throw new ApplicationException();
-            //}
-
-            //Node<T> newElement = new Node<T>(element);
-
-            //if (position == 1)
-            //{
-            //    if(this.head.Next != null)
-            //    {
-            //        Node<T> nodesAfterHead = this.head.Next;
-
-            //        this.head.Next = newElement;
-            //        this.head.Next.Next = nodesAfterHead;
-            //    }
-            //    else
-            //    {
-            //        this.head.Next = newElement;
-            //    }
-
-            //}
-            //else if (position == listSize)
-            //{
-
-            //    //If the position is equal to the size of the list
-            //    // then the tail is returned
-            //    SetLast(newElement.Element);
-
-            //    //Sets will update the size... which is done later in the method...
-            //    //so I took care of that error here... :) ... I know...
-            //    this._size--;
-            //}
-            //else
-            //{
-            //    //Look for the element in position between head and tail
-
-            //    //Sets the node as the head
-            //    Node<T> node = this.head.Next;
-
-            //    //sets the counter
-            //    int counter = 2;
-
-            //    //The loop only runs if the node exist
-            //    while (node != null)
-            //    {
-            //        if (counter == position)
-            //        {
-            //            Node<T> nodesAfterCurrentNode = node.Next;
-
-            //            node = newElement;
-
-            //            node.Next = nodesAfterCurrentNode;
-
-            //            break;
-            //        }
-
-            //        node = node.Next;
-
-            //        //Updates the counter
-            //        counter++;
-            //    }
-            //}
-
-            //this._size++;
         }
 
         //Sets the element before the given position
@@ -616,80 +322,6 @@ namespace LinkedList
                 _size++;
             }
 
-            //    //Gets the size of the list
-            //    int listSize = GetSize();
-
-            //    if (IsEmpty() || position < 1 || position > listSize)
-            //    {
-            //        throw new ApplicationException();
-            //    }
-
-            //    Node<T> newElement = new Node<T>(element);
-
-            //    if (position == 1)
-            //    {
-            //        if (this.head.Next != null)
-            //        {
-            //            Node<T> nodesToSave = this.head;
-
-            //            SetFirst(newElement.Element);
-
-            //            this.head.Next = nodesToSave;
-
-            //            this._size--;
-            //        }
-            //        else
-            //        {
-            //            this.head = newElement;
-            //        }
-
-            //    }
-            //    else if (position == listSize)
-            //    {
-
-            //        //If the position is equal to the size of the list
-
-            //        Node<T> nodeBeforeTail = this.tail.Previous;
-
-            //        nodeBeforeTail.Next = newElement;
-
-            //        newElement.Previous = nodeBeforeTail;
-
-            //        this.tail.Previous = newElement;
-
-            //    }
-            //    else
-            //    {
-            //        //Look for the element in position between head and tail
-
-            //        //Sets the node as the head
-            //        Node<T> node = this.head.Next;
-
-            //        //sets the counter
-            //        int counter = 2;
-
-            //        //The loop only runs if the node exist
-            //        while (node != null)
-            //        {
-            //            if (counter == position)
-            //            {
-            //                Node<T> nodeBeforeCurrent = node.Previous;
-
-            //                newElement.Next = node;
-
-            //                nodeBeforeCurrent.Next = newElement;
-
-            //                break;
-            //            }
-
-            //            node = node.Next;
-
-            //            //Updates the counter
-            //            counter++;
-            //        }
-            //    }
-
-            //    this._size++;
         }
 
         //Returns the node 
