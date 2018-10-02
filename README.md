@@ -13,3 +13,7 @@ October 2, 2018 Second entry
 
   I finally understand how to check the commits in github... I just removed all
   code that was comment it out :) now looks better :D
+
+  October 2, 2018 Third entry
+
+  ... I was in the wrong repository... now Insert and sorting methods are updated

@@ -412,32 +412,30 @@ namespace LinkedList
             }
             else
             {
-
-                while (current != null && elementToInsert.CompareTo(current.Element) < 0)
-                {
-                    current = current.Next;
-                }
-
                 //If the element to insert is equal to the head
                 // then is inserted next to the head
                 if (elementToInsert.CompareTo(head.Element) == 0)
                 {
                     AddAfter(elementToInsert, head.Element);
                 }
-                else if (elementToInsert.CompareTo(head.Element) < 0)
+                else if (elementToInsert.CompareTo(head.Element) <= 0)
                 {
                     // If is not greater then the element is inserted before the element
                     AddBefore(elementToInsert, head.Element);
                 }
-                else if (elementToInsert.CompareTo(tail.Element) > 0)
+                else if (elementToInsert.CompareTo(tail.Element) >= 0)
                 {
                     //If the element is gretaer than the tail then is inserted after
                     AddAfter(elementToInsert, tail.Element);
                 }
                 else
                 {
+                    while (current != null && elementToInsert.CompareTo(current.Element) > 0)
+                    {
+                        current = current.Next;
+                    }
                     // else the element is inserted after the current element(which is smaller than the one inserted)
-                    AddAfter(elementToInsert, current.Element);
+                    AddBefore(elementToInsert, current.Element);
                 }
             }
         }
@@ -445,29 +443,13 @@ namespace LinkedList
         //sorts the list in ascending order
         public void SortAscending()
         {
-            for (int i = 0; i < _size; i++)
+            Node<T> curr = head;
+            Clear();
+
+            while (curr != null)
             {
-                Node<T> currentElement = head;
-
-                //The minus one is there because usually the list and arrays
-                // have an index of zero so even if the list has 3 elements ... the index is equal 2
-                for (int j = 0; j < (_size - i - 1); j++)
-                {
-                    //Compares the current element on the list with the next one
-                    if (currentElement.Element.CompareTo(currentElement.Next.Element) > 0)
-                    {
-                        //If the current element is greater then the next element is smaller
-                        T smallerElement = currentElement.Next.Element;
-
-                        //We set the current element as greater 
-                        currentElement.Next.Element = currentElement.Element;
-
-                        //The current element is now the smaller found before.
-                        currentElement.Element = smallerElement;
-                    }
-
-                    currentElement = currentElement.Next;
-                }
+                Insert(curr.Element);
+                curr = curr.Next;
             }
 
         }
